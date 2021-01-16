@@ -11,9 +11,9 @@ namespace Vaquinha.AutomatedUITests
                                                IClassFixture<EnderecoFixture>, 
                                                IClassFixture<CartaoCreditoFixture>
 	{
-		private DriverFactory _driverFactory = new DriverFactory();
-		private IWebDriver _driver;
-		private IWebElement valorDoado;
+	private DriverFactory _driverFactory = new DriverFactory();
+	private IWebDriver _driver;
+	private IWebElement valorDoado;
         private IWebElement nomeCompleto;
         private IWebElement email;
         private IWebElement mensagem;
@@ -26,15 +26,15 @@ namespace Vaquinha.AutomatedUITests
         private IWebElement endereco;
         private IWebElement telefone;
         private IWebElement nomeTitular;
-		private IWebElement numero_cartao;
+	private IWebElement numero_cartao;
         private IWebElement validade;
-		private IWebElement cvv;
-		private IWebElement btn;
+	private IWebElement cvv;
+	private IWebElement btn;
         private readonly DoacaoFixture _doacaoFixture;
-		private readonly EnderecoFixture _enderecoFixture;
-		private readonly CartaoCreditoFixture _cartaoCreditoFixture;
+	private readonly EnderecoFixture _enderecoFixture;
+	private readonly CartaoCreditoFixture _cartaoCreditoFixture;
 
-		public DoacaoTests(DoacaoFixture doacaoFixture, EnderecoFixture enderecoFixture, CartaoCreditoFixture cartaoCreditoFixture)
+	public DoacaoTests(DoacaoFixture doacaoFixture, EnderecoFixture enderecoFixture, CartaoCreditoFixture cartaoCreditoFixture)
         {
             _doacaoFixture = doacaoFixture;
             _enderecoFixture = enderecoFixture;
@@ -64,8 +64,8 @@ namespace Vaquinha.AutomatedUITests
 		{
 			//Arrange
 			var doacao = _doacaoFixture.DoacaoValida();
-            doacao.AdicionarEnderecoCobranca(_enderecoFixture.EnderecoValido());
-            doacao.AdicionarFormaPagamento(_cartaoCreditoFixture.CartaoCreditoValido());
+            		doacao.AdicionarEnderecoCobranca(_enderecoFixture.EnderecoValido());
+            		doacao.AdicionarFormaPagamento(_cartaoCreditoFixture.CartaoCreditoValido());
 			_driverFactory.NavigateToUrl("https://vaquinha.azurewebsites.net/");
 			_driver = _driverFactory.GetWebDriver();
 
